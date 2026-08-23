@@ -55,6 +55,17 @@ Idea Whitepaper | Defensive Publication
 
 ---
 
+## 5.5 시스템 연계 - 3C 생존 트릴로지 (System Integration)
+
+본 연산 생존 아키텍처(CCS 유기적 역할 교대)는 단독이 아닌 다음 기계/전원 생존 구조와 결합되어 완전한 무중단 스테이션으로 동작한다.
+
+* **전원 생존:** `CWP-Battery-Swap`의 차동 감속 도킹 메커니즘(60T/61T, 저충격 도킹) 및 회전형 교환 스테이지와 결합하여 전원 교환 과정의 무중단 보장.
+* **기구 생존:** `CWP-Rolling-Self-Align-Battery-Swap-System`의 V홈 자율 정렬(Type B/S, ±5mm 흡수) 구조와 결합하여 야외 노지 오차 환경에서도 물리적 정렬을 보장.
+
+본 3종 결합은 EV, ESS, 드론, 물류로봇을 위한 완전한 생존형 플랫폼을 정의한다.
+
+---
+
 ## 6. 법적 고지 및 방어적 공개 선언 (Legal Notice & Defensive Publication)
 * 본 문서는 방어적 공개(Defensive Publication) 목적으로 작성되었으며, 특정 기업이나 제품에 대한 비방 또는 침해 의도가 없다.
 * 본문에서 언급된 기술 표준 및 연구 사례(CXL, HBM, Raft 등)는 공개된 산업 표준을 일례로 인용한 것이며 특정 독점권을 주장하지 않는다.
