@@ -55,6 +55,17 @@ This architecture prioritizes structural survival over capacity. Even if compute
 
 ---
 
+## 5.5 System Integration - 3C Survival Trilogy
+
+This compute survival architecture (CCS Organic Role-Swapping) does not operate alone, but operates as a complete zero-downtime station when combined with the following mechanical/power survival structures.
+
+* **Power Survival:** Combined with the differential reduction docking mechanism (60T/61T, low-impact docking) and rotary swapping stage of `CWP-Battery-Swap` to guarantee uninterrupted power exchange process.
+* **Mechanical Survival:** Combined with the V-groove self-alignment (Type B/S, ±5mm absorption) structure of `CWP-Rolling-Self-Align-Battery-Swap-System` to guarantee physical alignment in outdoor unpaved error environments.
+
+This 3-system combination defines a complete survival-type platform for EV, ESS, drones, and logistics robots.
+
+---
+
 ## 6. Legal Notice & Defensive Publication
 * This document is written for defensive publication purpose and has no intention of defaming or infringing specific companies or products.
 * Technology standards and research cases (CXL, HBM, Raft, etc.) mentioned are cited as examples of public industry standards and do not claim specific proprietary rights.
