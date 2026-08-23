@@ -51,7 +51,7 @@ This architecture prioritizes structural survival over capacity. Even if compute
 
 ## 5. Scalability & Novelty
 * Scalability: Node N scalable from 2 to 1000+, theoretically infinite. Practical limit depends only on physical packaging and interconnect technology, not on survival control logic.
-* Prior Art & Novelty: Unlike existing individual chiplet structures, self-healing mesh, Raft-based distributed control technologies, this is the first public declaration that integrally defines "Chiplet-APU Multi-System Survival Architecture that performs organic role-swapping central control for uninterrupted AI inference."
+* Prior Art & Novelty: Unlike existing individual chiplet structures, self-healing mesh, and Raft-based distributed control technologies, this document is a defensive publication that integrally defines a "Chiplet-APU Multi-System Survival Architecture that performs organic role-swapping central control for uninterrupted AI inference" by combining them.
 
 ---
 
