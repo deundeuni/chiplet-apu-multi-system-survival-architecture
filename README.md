@@ -1,106 +1,126 @@
-# Chiplet-APU Multi-System Survival Architecture v2.3 (Full-Stack Specification)
-> **Idea Whitepaper & Defensive Publication**  
-> **Official Repository:** github.com/soma-moa | **Official Domain:** somamoa.ai.kr  
-> **Conceived Date:** 2026-08-22 / **Last Revised (v2.3):** 2026-08-28  
-> **License:** CC BY 4.0 & DPL (Defensive Publication License)  
-> **Original Language Notice:** The Korean text serves as the primary legal source. English is an official reference translation for prior art defense.
+# Chiplet-APU Multi-System Resilient Architecture v2.4 (Full-Stack Resilient Multi-System Architecture)
+
+> **Official Document Classification:** Conceptual Whitepaper & Defensive Publication / Prior Art  
+> **Initial Conception Date:** 2026-08-22 / **Final Revision Date (v2.4):** 2026-08-29  
+> **Root IP Owner:** Soma-Moa (`soma-moa` / Creator: `deundeuni`)  
+> **Official Repository:** `github.com/soma-moa` | **Official Domain:** `somamoa.ai.kr`  
+> **Applicable License:** CC BY 4.0 & DPL (Defensive Publication License v1.0)  
+> **Original Language Notice:** The Korean original text of this document serves as the authoritative legal and technical standard. English and other translated versions are for reference only. In case of any interpretive discrepancy, the Korean original shall prevail.
 
 ---
 
-## 0. Origin & Inventorship Declaration
+## 0. Creator Declaration & Core Philosophy
 
-* **Sole Conception:** deundeuni (soma-moa)
-* **AI Tool Usage Notice:** All core technical concepts, problem definitions, architectural frameworks, and hardware methodologies were conceived solely by the human inventor (deundeuni). LLM systems (Meta AI, Gemini) were strictly utilized as analytical tools for prior-art search, technical cross-verification, and structural formatting.
+### 0.1 True Motivation Originating from the Field
+This architecture does not stem from a theoretical virtual model, but from first-hand operational experience and critical problem-awareness in real-world industrial fields. As a daily user experiencing AI request delays and system lockups during peak hours, and observing aging machinery crashing with blue screens on factory floors or smartphones/PCs throttling and crashing under heavy loads, the principle learned was simple: **"Even if a single bolt loosens, the entire machine must not halt; there must be a backup path, and if one component fails, the adjacent component must immediately take over the baton."**
 
-### Motivation and Background
-This architecture originated from practical field observations rather than abstract theoretical models. Observing system crashes, thermal throttling under heavy computational loads, and service latencies in real-world deployment, the inventor sought a deterministic hardware-software fabric capable of zero-downtime execution under peak stress.
-
-The core principle stems from industrial redundancy: "A system must remain operational even if individual components fail, transferring control seamlessly to auxiliary nodes." This whitepaper reorganizes fragmented interconnect technologies (CXL, UCIe, 3D Stacked Cache) into an organic, self-healing survival architecture.
+### 0.2 Structure over Capacity
+This architecture rejects excessive capacity specification competition and the limitations of massive monolithic chips. Even if a compute unit or memory experiences a fault or overload, AI inference services must survive with zero data loss and **zero-downtime fail-over**, prioritizing organic structure above all else.
 
 ---
 
-## 1. Revision History of the Chiplet Layer
+## 1. Chiplet Layer Revision History
 
-* **v2.0:** Point-to-point (P2P) interconnect topology with manual load balancing.
-* **v2.1:** Standardized chiplet interfaces compliant with CXL 3.0 and UCIe protocols; introduced dual-path hardware redundancy.
-* **v2.2:** Integrated the Team Leader (TL) chiplet bridge with 3-point telemetry feedback loop between CPU, TL, and GPU execution units.
-* **v2.3 (Current):** Implemented bi-directional backpressure control within the TL chiplet, dynamic fault isolation logic for sub-accelerator cores (GPGPU/NPU), and zero-copy I/O offloading protocol via CXL memory pooling.
-
----
-
-## 2. Core Philosophy — Structure over Capacity
-This architecture rejects excessive capacity competition and the limitations of monolithic chips. It enforces a deterministic guarantee that AI inference tasks and system tasks maintain continuous execution (Zero-Downtime Fail-Over) without data loss, even under memory saturation or thermal trip events.
+* **v2.0:** Point-to-point (P2P) direct connection between chiplets and passive load balancing applied.
+* **v2.1:** CXL 3.0 and UCIe fabric-compatible chiplet slot interface added, defining basic dual paths.
+* **v2.2:** Team Leader (TL) chiplet bridge introduced, 3-point telemetry integration between CPU, TL, and GPU.
+* **v2.3:** Bidirectional backpressure circuitry inside the TL chiplet, CXL memory pooling, and distributed control established.
+* **v2.4 (Current Final):** N-scalable multi-system mesh, bypass 3-tier control, leukocyte resource suppression (T-Reg), Tri-State physical isolation, independent Safety IP, and 3C survival trilogy integrated specification finalized.
 
 ---
 
-## 3. Full-Stack Layer Integration
-
-The architecture unifies **[Chiplet Modules + Control Software + Baseboard Hardware]** into an integrated execution platform.
+## 2. Full-Stack Integrated Layer Structure (3-Tier Integrated Architecture)
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│               L2-L3 Control Software & Governance Protocol             │
-│ - OS Kernel Drivers, CXL Virtual Memory Mapper, Raft Self-Healing Code │
+│ [L2-L3] Control Software & Protocols                                   │
+│ - OS Kernel Driver, CXL Virtual Memory Mapper, Raft Self-Healing Microcode│
 └──────────────────────────────────┬─────────────────────────────────────┘
                                    │ (Telemetry & Backpressure Signals)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│                 L1 Team Leader (TL) & Chiplet Compute Fabric           │
-│ - CPU / TL Bridge Chiplet / Accelerator Cores / CXL Memory Pooling     │
+│ [L1] Team Leader (TL) & Chiplet Compute Fabric                          │
+│ - CPU / TL Bridge / Compute Units (GPGPU/NPU) / CXL Memory Pooling     │
+│ - N-Scalable Mesh Fabric + Bypass 3-Tier Control + T-Reg Suppressor + Bus Isolation │
 └──────────────────────────────────┬─────────────────────────────────────┘
-                                   │ (High-Speed Bus & Power Lines)
+                                   │ (High-Speed Signals & Power Bus)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│                L0 Baseboard Physical Intercept Layer                   │
-│ - 0.1ms HW E-Stop PMIC/MOSFET, Retimers, CWP Hardware Bus Interface    │
+│ [L0] Baseboard Physical Processing Layer                              │
+│ - 0.1ms HW E-Stop PMIC/MOSFET, Retimer, Independent Safety IP Power/Clock Domain │
+│ - [3C Integration] Differential Deceleration Docking, V-Groove Self-Alignment, External Stage Link │
 └────────────────────────────────────────────────────────────────────────┘
+## 3. Multi-System Core Fabric & Distributed Control Mechanism
+
+1. **Dual-Redundant & N-Scalable Mesh:** 
+   - Provides basic dual-redundancy via a Primary high-speed path and a HW/SW auxiliary bypass path.
+   - Supports **dynamic multi-system (2~N, 10, 100~1000+ nodes) mesh scaling** where runtime nodes can freely join and leave. The expansion limit depends solely on physical packaging and interconnect physics.
+2. **Team Leader (TL) Chiplet & Console-Grade Stability:** Translates complex commands between CPU and GPU into simple AQL/stream instruction buffers in real-time, eliminating bottlenecks. It coordinates frame rates at the hardware level, preventing the throttling/crashing typical of PCs and delivering **console-grade hardware survival capability** during peak loads.
+3. **3-Point Telemetry & Bidirectional Backpressure:** Real-time monitoring of 1. Compute state, 2. Interconnect latency, and 3. Power/thermal status. When queue occupancy reaches a threshold (e.g., 85%), it transmits a reverse backpressure signal to the CPU driver to regulate input speed, fundamentally blocking memory exhaustion and thermal crashes.
+4. **Distributed Control System (CCS) Organic Role-Swapping (Raft-Based):** 
+   - Applies distributed physical control (Many as One) to eliminate Single Points of Failure (SPOF).
+   - When a controller's load exceeds threshold (e.g., 70%) or thermal trip occurs, central control authority is **dynamically handed over to an adjacent controller within 100ms (10~100ms)**, preventing the central controller itself from becoming a bottleneck.
 
 ---
 
-### [Part 2: Section 4 ~ 9]
+## 4. Leukocyte Immune Suppression, Bypass Control, and Physical Isolation Specs
 
-```markdown
-## 4. Modular Interconnect Fabric (Dual-Path & N-Scalable)
-* **Dual-Redundant Baseline:** Features primary and auxiliary bypass routes at the hardware/software level to prevent single link failures from interrupting service.
-* **N-Scalable Mesh:** Supports dynamic join/leave operations of compute nodes (N = 2 to 1000+). The topology scales dynamically into an M-redundant self-healing mesh, limited only by packaging and physical interconnect constraints.
-* **Modular Fault Isolation:** CPU, GPU/NPU, RAM, and 3D Stacked SSD blocks operate as physically isolated chiplets. Upon detecting a thermal or memory fault, the TL chiplet isolates the failing node while adjacent units preserve execution continuity.
-
----
-
-## 5. Team Leader (TL) Chiplet, Bi-Directional Backpressure & Console-Grade Stability
-* **Team Leader (TL) Chiplet:** Acts as an independent hardware bridge between control processors (CPU) and parallel compute units (GPU). Translates high-level task graphs into AQL/stream command buffers to eliminate scheduling bottlenecks.
-* **Console-Grade Stability:** Prevents system crashes or severe frame drops caused by thermal throttling under extreme loads. Hardware telemetry dynamically regulates command queueing to guarantee console-like system stability.
-* **3-Point Telemetry & Bi-Directional Backpressure:** Monitors compute status, interconnect latency, and power/thermal telemetry. When queue occupancy exceeds threshold (e.g., 85%), the TL chiplet issues backpressure signals to the CPU kernel driver, preventing memory thrashing and system instability.
-* **Zero-Copy CXL Memory Pooling:** Routes storage data (3D Stacked SSD) directly to GPU memory via PCIe/CXL fabrics without CPU intervention, with baseboard retimers ensuring high-frequency signal integrity.
+| Category | Professional Technical Function Name | Hardware Implementation & Control Specification (Broad Options) |
+| :--- | :--- | :--- |
+| **Bandwidth Rate Limiter** | **Dynamic Bandwidth Rate Limiter**<br>*(Rate Limiter)* | Deploys a Token Bucket Policer inside the bypass path to prevent secondary collisions from burst traffic (variable bandwidth occupancy range 10%~90%). |
+| **Stealth Random Scan** | **Asynchronous Random Sampling Scan**<br>*(Random Sampling Scan)* | Asynchronously extracts data flow via random sampling, instantly detaining anomalous packets that cause sync errors or infinite loops into a Quarantine Buffer. |
+| **Unauthorized Relocation Interception** | **Unauthorized Packet Relocation Interception Circuit**<br>*(Relocation Interception)* | Instantly force-resets unverified interrupt requests lingering near bypass entry points without telemetry approval, granting packet hauling rights exclusively to authorized recovery modules holding handshake tokens. |
+| **Self-Healing Suppressor** | **Self-Healing Resource Suppressor**<br>*(Self-Healing Suppressor)* | Dynamically rate-limits self-healing module resource usage (power, clock, bus) if it exceeds threshold (default 15%, variable range 5%~30%), preventing resource exhaustion (immune storm). |
+| **Physical Bus Isolation** | **Tri-State Physical Bus Isolation**<br>*(Tri-State Bus Isolation)* | If self-healing logic attempts unauthorized access to main registers or bus expansion, executes Tri-State (High-Z) physical bus severance and independent HW reset within 0.1~10 clocks. |
 
 ---
 
-## 6. Central Control System (CCS) — Distributed Governance & Organic Role-Swapping
-* **Logical Centralization (Many as One):** Operates as a unified control plane to external interfaces while maintaining physical distribution to eliminate Single Points of Failure (SPOF).
-* **Organic Role-Swapping (Raft-Based):**
-  1. Microcode continuously evaluates CPU load, telemetry queues, and bus latencies.
-  2. Load exceeding defined thresholds (e.g., 70%) triggers automatic control transfer.
-  3. Leadership, telemetry aggregation, and arbitration roles transition to adjacent nodes within 100ms.
-  4. Prevents control plane bottlenecks via non-exclusive, cyclic role distribution.
+## 5. Independent Safety IP, Anti-Tamper, and 3C Survival Trilogy (Physical Integration)
+
+1. **Independent Safety IP & Anti-Tamper Self-Destruction Circuit:**
+   - Features an independent control IP module physically isolated from main CPU/GPU/NPU power and clock domains. Operates normally even if main cores experience a 100% outage.
+   - Upon detecting physical inspection (Decapsulation, optical/laser analysis), it blows internal eFuses via overvoltage or zeroes key memory (Zeroization) within 0.1ns, permanently destroying core logic and keys.
+2. **3C Survival Trilogy (L0 Physical Baseboard Integration):**
+   - **Power Survival:** Combined with differential deceleration docking (60T/61T, low-impact) and rotary exchange stages of `CWP-Battery-Swap` to achieve zero-downtime battery hot-swapping. Features hardware E-Stop where baseboard PMIC/MOSFET cuts power bus within 0.1ms upon detecting AI hallucinations.
+   - **Mechanical Survival:** Interfaced with V-groove self-alignment (Type B/S, absorbs ±5mm error) of `CWP-Rolling-Self-Align-Battery-Swap-System` and baseboard sensor bus (CAN/SPI) to seamlessly absorb field assembly errors.
+   - **Platform Expansion:** Forms a zero-downtime resilient platform for EVs, ESS, drones, logistics robots, and edge AI servers.
 
 ---
 
-## 7. Baseboard Integration — 3C Survival Trilogy
-Connects computational resilience with physical machinery and power management via baseboard circuitry.
-* **Power Resilience (L0 Physical):** Integrates with `CWP-Battery-Swap` differential deceleration docking (60T/61T) for uninterrupted power exchange. Includes a 0.1ms hardware E-Stop interceptor (PMIC/MOSFET) to sever power buses upon detecting safety anomalies.
-* **Mechanical Alignment (L0 Physical):** Interfaces with `CWP-Rolling-Self-Align` V-groove mechanisms (Type B/S, ±5mm alignment tolerance) via baseboard CAN/SPI buses.
-* **Platform Scalability:** Forms an integrated infrastructure platform for EVs, ESS, UAVs, AGVs, and Edge AI servers.
+## 6. Future Application & Expansion Scope
+
+The self-healing and zero-downtime control philosophy of this architecture is not restricted to single chiplet systems, but extends broadly across future industries requiring high reliability and uninterrupted computation:
+1. **Next-Generation AI Data Centers & Cloud Farms:** Standard control architecture blocking peak-time fabric deadlocks across hyperscale clusters comprising tens of thousands of GPU/NPU chiplets.
+2. **Autonomous Mobility & EV Computing:** Chiplet survival control satisfying functional safety (ISO 26262 / ASIL-D) under extreme driving conditions and power fluctuations.
+3. **Robotics & Smart Factory Automation:** Edge AI controllers operating uninterrupted in environments frequent with physical shock and electrical noise.
+4. **Aerospace & Mission-Critical Edge Systems:** Uninterrupted mission-critical computing surviving via independent anti-tamper and self-healing under radiation and external physical interference environments.
 
 ---
 
-## 8. Open Ecosystem & Defensive Publication Declaration
-* This document is published under Defensive Publication principles to foster an open, interoperable technical ecosystem, enabling global semiconductor and hardware manufacturers to seamlessly adopt and integrate this architecture for broader market expansion.
-* The conceptual structure, upper-layer protocols, and governance logic of this architecture are fully open-sourced under CC BY 4.0 & DPL to promote de facto industry standardization.
-* Exemplary parameters (70% load threshold, 100ms latency, 85% backpressure) serve as descriptive embodiments and do not restrict the prior art scope of the underlying structural survival mechanism across future implementations.
+## 7. Creator's Commercial Protection & Legal Defensive Shield Declaration
 
+This whitepaper enacts the following **4-Layer Legal Defensive Shield** to protect the exclusive commercial interests of the creator, Soma-Moa (`soma-moa`), and preemptively nullify malicious patent monopolies by third parties:
+
+* **Timestamp (Prior Art):** Preemptive rejection and invalidation of third-party monopolistic patent filings.
+* **DPL (Defensive Publication License - Retaliation Clause):** Immediate revocation of license and access rights if a party attacks the creator with patent suits.
+* **Prior User Right:** Secures permanent royalty-free independent manufacturing and business rights under patent laws regardless of third-party patent registrations.
+* **Trade Secret Vault:** Exclusive retention of core formulas, RTL code, and anti-tamper sensor calibration values in private storage.
+
+### 7.1 DPL (Defensive Publication License) & CC BY 4.0 Terms
+* The functional implementation concepts (What) of this document are fully opened worldwide to prevent any tech giant from monopolizing this structure via patents.
+* **Retaliation Clause:** The moment any individual or entity utilizing part or all of this architecture initiates patent infringement litigation against the creator (Soma-Moa) or ecosystem members, their DPL license validity terminates instantly, and all physical/software access rights to this technology are legally revoked.
+
+### 7.2 Prior User Right & Timestamp Guarantee
+* By acquiring a timestamp (2026-08-28) via GitHub commits and the official domain (`somamoa.ai.kr`), the creator (Soma-Moa) holds **guaranteed Prior User Rights under Article 103 of the Korean Patent Act, 35 U.S.C. 273 (USA), and EPO examination guidelines**, ensuring permanent royalty-free independent manufacturing, sales, and licensing rights regardless of subsequent third-party patent grants.
 
 ---
 
-## 9. Prior Art & Normative References
-* **Safety & Functional Safety:** Heinrich (1931) 300:29:1 Pyramid, James Reason (1990) Swiss Cheese Model, Fail-Safe, ALARP, ISO 13849-1 (Cat 4 / PL e), IEC 61508 (SIL3).
-* **Interconnect & Hardware:** CXL 3.0 Spec, UCIe 1.0 Spec, JEDEC JESD235D HBM3, ACPI Spec, PCIe Gen6/7 Retimer Spec.
-* **Consensus & Protocols:** Ongaro & Ousterhout Raft Consensus (2014), Ed25519 (RFC 8032), CBOR (RFC 8949), GDPR Article 5(1)(e).
-* **Legal Guidance & Precedents:** USPTO AI Inventorship Guidance (2024.02), Thaler v. Vidal (Fed. Cir. 2022), EPO Guidelines G-II 3.3.1, Pannu v. Iolab Corp. (Fed. Cir. 1998).
+## 8. Prior Art & References
+
+* **[Functional Safety & Survival Theory]** Heinrich (1931) 300:29:1 Pyramid, James Reason (1990) Swiss Cheese Model, Fail-Safe, ALARP, ISO 13849-1 (Cat 4 / PL e), IEC 61508 (SIL3).
+* **[Communication / Hardware / Baseboard Standards]** CXL 3.0 Specification, UCIe 1.0 Specification, JEDEC HBM3, ACPI Power/Thermal Specification, PCIe Gen6/7 Retimer Specification.
+* **[Consensus & Software Protocols]** Ongaro & Ousterhout Raft Consensus (2014), Ed25519 (RFC 8032), CBOR (RFC 8949), GDPR Article 5(1)(e).
+* **[Legal Precedents & Guidelines]** Article 103 of Korean Patent Act (Prior User Right), USPTO AI Inventorship Guidance (2024.02), Thaler v. Vidal (2022), EPO Guidelines G-II 3.3.1, Pannu v. Iolab Corp. (1998).
+
+---
+* Root Origin & Primary IP Owner: deundeuni (soma-moa)
+* Ancillary Sub-System IP Owner: soma-moa (somamoa.ai.kr / github.com/soma-moa)
+* All derived sub-modules (Rate Limiter, Stealth Sampler, T-Reg Suppressor, Anti-Cancer Isolation, Anti-Tamper Circuit, 3C Survival Trilogy, Future Expansion Modules) share the exact same root origin.
