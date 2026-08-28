@@ -1,7 +1,7 @@
 # 칩렛-APU 다중 시스템 생존 아키텍처 v2.3 (Full-Stack Integrated Specification)
 > **Idea Whitepaper & Defensive Publication**  
 > **공식 저장소:** github.com/soma-moa | **공식 도메인:** somamoa.ai.kr  
-> **최초 구상:** 2025-08-22 / **최종 개정 (v2.3):** 2026-08-28  
+> **최초 구상:** 2026-08-22 / **최종 개정 (v2.3):** 2026-08-28  
 > **라이선스:** CC BY 4.0 & DPL (Defensive Publication License)  
 > **원안 언어 고지:** 한국어 원안이 원본이며 영문은 참고 번역이다. 해석 차이 시 국문 우선.
 
@@ -92,8 +92,9 @@
 
 ## 8. 개방형 생태계 및 선행기술 선언 (Ecosystem & Defensive Publication)
 * 본 문서는 글로벌 반도체 및 하드웨어 제조사들이 장벽 없이 본 아키텍처를 호환·채택할 수 있도록 유기적 기술 생태계를 조성하고, 시장 전체의 성장을 도모하기 위한 '방어적 공개(Defensive Publication)' 목적으로 작성되었다.
-* 상위 프로토콜과 검증 로직은 100% Public(CC BY 4.0 & DPL)으로 전면 개방하여 범용 표준화(De facto Standard)를 지향하되, 하부 eFPGA RTL 회로 및 정밀 CAD 도면은 영업비밀(Trade Secret)로 보호하는 2-Track 전략을 취한다.
+* 본 아키텍처의 개념 구조, 상위 프로토콜 및 제어 로직은 100% Public(CC BY 4.0 & DPL)으로 전면 개방하여 범용 표준화(De facto Standard)를 지향한다.
 * 본 아키텍처는 본문에서 예시로 제시된 특정 수치(70%, 100ms, 85%, N=1000+ 등)나 특정 제조사의 규격에 국한되지 않으며, '구조적 생존과 유기적 역할 교대'라는 동일한 원리를 따르는 모든 미래 자가 치유 구현체에 대해 강력한 선행기술로 작동한다.
+
 
 ---
 
