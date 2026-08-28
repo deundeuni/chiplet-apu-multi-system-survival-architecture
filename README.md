@@ -1,7 +1,7 @@
 # Chiplet-APU Multi-System Survival Architecture v2.3 (Full-Stack Specification)
 > **Idea Whitepaper & Defensive Publication**  
 > **Official Repository:** github.com/soma-moa | **Official Domain:** somamoa.ai.kr  
-> **Conceived Date:** 2025-08-22 / **Last Revised (v2.3):** 2026-08-28  
+> **Conceived Date:** 2026-08-22 / **Last Revised (v2.3):** 2026-08-28  
 > **License:** CC BY 4.0 & DPL (Defensive Publication License)  
 > **Original Language Notice:** The Korean text serves as the primary legal source. English is an official reference translation for prior art defense.
 
@@ -93,8 +93,9 @@ Connects computational resilience with physical machinery and power management v
 
 ## 8. Open Ecosystem & Defensive Publication Declaration
 * This document is published under Defensive Publication principles to foster an open, interoperable technical ecosystem, enabling global semiconductor and hardware manufacturers to seamlessly adopt and integrate this architecture for broader market expansion.
-* Upper-layer protocols and verification logic are open-sourced under CC BY 4.0 & DPL to promote de facto industry standardization, while proprietary low-level eFPGA RTL schematics and CAD blueprints are retained as Trade Secrets under a 2-Track framework.
+* The conceptual structure, upper-layer protocols, and governance logic of this architecture are fully open-sourced under CC BY 4.0 & DPL to promote de facto industry standardization.
 * Exemplary parameters (70% load threshold, 100ms latency, 85% backpressure) serve as descriptive embodiments and do not restrict the prior art scope of the underlying structural survival mechanism across future implementations.
+
 
 ---
 
