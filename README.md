@@ -1,46 +1,92 @@
-# soma-moa: 칩렛-APU 다중 시스템 생존 아키텍처 v2.6 (Final)
+
+# soma-moa: Chiplet-APU Multi-System Survival Architecture v2.6 (Final)
 
 ![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)
 ![License: DPL v1.0](https://img.shields.io/badge/License-DPL_v1.0-green.svg)
 ![Version](https://img.shields.io/badge/Version-v2.6_Final-orange.svg)
 
-> **"볼트 하나가 풀려도 전체 시스템이 무너지지 않게 예비 경로가 있어야 하며, 부품 하나가 쓰러지면 옆 부품이 즉시 바통을 이어받아야 한다."**
+> **"Even if a single bolt loosens, redundant paths must prevent system collapse; if a component fails, adjacent components must immediately take over."**
 
-`soma-moa`는 거대 반도체, AI 가속기, 자율주행 모빌리티, 로보틱스 생태계를 위한 **무중단 생존형 공용 오픈 아키텍처 규격**입니다. 단일 장애점(SPOF)을 원천 차단하고, L0 물리 소재부터 L3 소프트웨어 제어까지 연결되는 풀스택 자가치유 및 백혈구 면역 스캔 시스템을 제공합니다.
-
----
-
-## 📂 프로젝트 파일 구조
-
-- **[WHITEPAPER.ko.md]** : 공식 선행기술 방어 백서 전문 (Full Text)
-- **[PHILOSOPHY.md]** : 창안자 원안 철학 및 현장 동기
-- **[LICENSE]** : CC BY 4.0 & DPL v1.0 라이선스 명세
+`soma-moa` is an **open public standard specification for zero-downtime resilient computing** designed for large-scale semiconductors, AI accelerators, autonomous mobility, and robotics ecosystems. It aims to mitigate single points of failure (SPOF) and provides a full-stack self-healing framework extending from L0 physical materials to L3 software governance.
 
 ---
 
-## 🏗️ 풀스택 레이어 개요
+## 📂 Project Repository Structure
+
+- **[WHITEPAPER.md]** : Official Prior Art & Technical Standard Specification (Full Text)
+- **[PHILOSOPHY.md]** : Core Design Philosophy & Field Motivation
+- **[LICENSE]** : CC BY 4.0 & DPL v1.0 License Terms
+
+---
+
+## 🏗️ Full-Stack Layer Architecture
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│ [L2-L3] 제어 소프트웨어 & 프로토콜 (Control Software & Protocols)        │
-│ - OS 커널 드라이버, CXL 가상 메모리 매퍼, Raft 자가 치유 마이크로코드       │
+│ [L2-L3] Control Software & Protocols                                   │
+│ - OS Kernel Drivers, CXL Virtual Memory Mapper, Raft Microcode         │
 └──────────────────────────────────┬─────────────────────────────────────┘
-                                   │ (텔레메트리 & 백프레셔 신호)
+                                   │ (Telemetry & Backpressure Signals)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│ [L1] 팀리더(TL) & 칩렛 연산 패브릭 (TL & Chiplet Fabric Layer)          │
-│ - CPU / TL 브리지 / 연산 기공(GPGPU/NPU) / CXL 메모리 풀링               │
-│ - N-확장형 메쉬 패브릭 + 갓길 3중 관제 + T-Reg 억제 + 물리 격리 회로       │
+│ [L1] Team Leader (TL) & Chiplet Fabric Layer                           │
+│ - CPU / TL Bridge / Compute Units (GPGPU/NPU) / CXL Memory Pooling     │
+│ - N-Scalable Mesh Fabric + Auxiliary Path + T-Reg + Bus Isolation      │
 └──────────────────────────────────┬─────────────────────────────────────┘
-                                   │ (초고속 신호 & 전원 버스)
+                                   │ (High-Speed Signal & Power Bus)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│ [L0] 메인보드 물리 및 소재 레이어 (Baseboard Physical & Material)        │
-│ - 0.1ms HW E-Stop PMIC/MOSFET, 리타이머, 독립 Safety IP 전원/클럭 영역  │
-│ - [3C 연계] 차동 감속 도킹, V홈 자율 정렬, 패시브 생체모방 습윤 코팅      │
+│ [L0] Baseboard Physical & Material Layer                               │
+│ - 0.1ms HW E-Stop PMIC/MOSFET, Retimer, Independent Safety IP Domain   │
+│ - [3C Alignment] Differential Docking, V-Groove, Biomimetic Coating    │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-## ⚖️ 지적재산권 및 방어적 라이선스 (DPL)
+## ⚖️ Intellectual Property & Defensive Licensing (DPL)
 
-본 백서는 특정 기업의 기술 사유화를 방지하고 공익적 오픈 표준을 보호하기 위해 DPL (Defensive Publication License v1.0) 및 CC BY 4.0을 적용합니다.
+This specification applies the Defensive Publication License (DPL v1.0) and CC BY 4.0 to prevent proprietary monopolization and protect open safety standards.
 * Root Origin & Primary IP Owner: deundeuni (soma-moa)
 * Official Domain: somamoa.ai.kr
+* Governing Language Notice: The Korean original document remains the legal and technical baseline reference; this English standard specification is provided for international interoperability and standardization.
+```
+
+---
+
+# 2. PHILOSOPHY.md
+
+```markdown
+# soma-moa Design Philosophy & Field Motivation
+
+## 1. Field-Driven Motivation
+This architecture addresses real-world operational challenges rather than hypothetical models.
+It responds directly to peak-time cloud AI service latency, industrial control system blue-screen crashes, and mobile thermal throttling under heavy computing workloads.
+
+> **"Even if a single bolt loosens, redundant paths must prevent system collapse; if a component fails, adjacent components must immediately take over."**
+
+## 2. Structure over Capacity
+This project rejects raw compute scaling at the expense of fault tolerance. It prioritizes biological resilience capable of **zero-downtime fail-over** during hardware or network degradation.
+
+## 3. Etymology & Nomenclature (soma-moa)
+* **SOMA (Body / Organism):** Derived from the Greek word for 'body', representing a system that self-heals as a unified organism.
+* **MOA (Gathering / Wisdom):** Reflects the Korean term *moa* ('gathered together'), combining distributed computing resources into a resilient collective structure.
+* **OSRP -> SOMA -> soma-moa:** Evolved from Open Survival Architecture into the unified standard brand `soma-moa`.
+```
+
+---
+
+# 3. LICENSE
+
+```text
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+& Defensive Publication License (DPL v1.0)
+
+Copyright (c) 2026 deundeuni (soma-moa)
+Official Repository: [https://github.com/soma-moa](https://github.com/soma-moa)
+Official Domain: [https://somamoa.ai.kr](https://somamoa.ai.kr)
+
+[Governing Language Notice]
+The Korean original version of this specification constitutes the primary legal and technical standard reference. This English text is provided for international interoperability and standard distribution. In case of conflict, the Korean text prevails.
+
+[License Terms]
+1. You are free to share and adapt this work for any purpose, even commercially, under CC BY 4.0.
+2. You must give appropriate credit to the original author (deundeuni / soma-moa).
+3. Defensive Termination Clause (DPL v1.0): If any entity initiates patent litigation against the original author or ecosystem members regarding this specification, the license granted under this document shall automatically terminate retroactively.
+```
