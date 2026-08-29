@@ -16,7 +16,6 @@ This project rejects raw compute scaling at the expense of fault tolerance. It p
 * **SOMA (Body / Organism):** Derived from the Greek word for 'body', representing a system that self-heals as a unified organism.
 * **MOA (Gathering / Wisdom):** Reflects the Korean term *moa* ('gathered together'), combining distributed computing resources into a resilient collective structure.
 * **OSRP -> SOMA -> soma-moa:** Evolved from Open Survival Architecture into the unified standard brand `soma-moa`.
-```
 
 ---
 
