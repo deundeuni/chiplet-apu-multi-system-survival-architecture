@@ -1,15 +1,25 @@
-# soma-moa 구상 철학 및 창안 배경 (Philosophy & Field Motivation)
 
-## 1. 현장에서 출발한 동기
-본 아키텍처는 가상의 이론에 머물지 않고 실무 현장의 문제의식에서 출발했습니다. 
-일반 사용자로서 피크 타임에 AI 서비스가 지연·먹통이 되는 현상, 공장 현장에서 노후 제어기가 블루스크린으로 멈추는 사고, 스마트폰 및 PC가 과부하 발열로 스로틀링이 걸리거나 튕기는(Crash) 한계를 직접 목격했습니다.
+---
 
-> **"볼트 하나가 풀려도 전체 시스템이 무너지지 않게 예비 경로가 있어야 하며, 부품 하나가 쓰러지면 옆 부품이 즉시 바통을 이어받아야 한다."**
+# 2. PHILOSOPHY.md
 
-## 2. 용량이 아닌 구조 (Structure over Capacity)
-거대 단일 칩(Monolithic)의 파편화된 스펙 경쟁을 거부합니다. 특정 컴퓨트 유닛이나 메모리에 결함이 생겨도 데이터 손실 없이 **무중단(Zero-downtime Fail-over)**으로 생존하는 유기체적 구조를 최우선으로 둡니다.
+```markdown
+# soma-moa Design Philosophy & Field Motivation
 
-## 3. 네이밍 유래 (soma-moa)
-* **SOMA (몸/유기체):** 그리스어로 '몸'을 뜻하며, 시스템 전체가 하나의 생명체처럼 스스로 치유하고 제어되는 구조를 의미합니다.
-* **MOA (모아/지혜):** 한글 '모아'의 의미와 함께, 분산된 컴퓨팅 자원을 하나로 결합하여 더 높은 안전성을 도출한다는 통합 사상을 담고 있습니다.
-* **OSRP -> SOMA -> soma-moa:** 본 시스템은 Open Survival Architecture에서 진화하여 최종적으로 `soma-moa`라는 고유 기술 표준 브랜드로 정립되었습니다.
+## 1. Field-Driven Motivation
+This architecture addresses real-world operational challenges rather than hypothetical models.
+It responds directly to peak-time cloud AI service latency, industrial control system blue-screen crashes, and mobile thermal throttling under heavy computing workloads.
+
+> **"Even if a single bolt loosens, redundant paths must prevent system collapse; if a component fails, adjacent components must immediately take over."**
+
+## 2. Structure over Capacity
+This project rejects raw compute scaling at the expense of fault tolerance. It prioritizes biological resilience capable of **zero-downtime fail-over** during hardware or network degradation.
+
+## 3. Etymology & Nomenclature (soma-moa)
+* **SOMA (Body / Organism):** Derived from the Greek word for 'body', representing a system that self-heals as a unified organism.
+* **MOA (Gathering / Wisdom):** Reflects the Korean term *moa* ('gathered together'), combining distributed computing resources into a resilient collective structure.
+* **OSRP -> SOMA -> soma-moa:** Evolved from Open Survival Architecture into the unified standard brand `soma-moa`.
+```
+
+---
+
