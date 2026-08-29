@@ -1,10 +1,6 @@
 
 # soma-moa: Chiplet-APU Multi-System Survival Architecture v2.6 (Final)
 
-![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)
-![License: DPL v1.0](https://img.shields.io/badge/License-DPL_v1.0-green.svg)
-![Version](https://img.shields.io/badge/Version-v2.6_Final-orange.svg)
-
 > **"Even if a single bolt loosens, redundant paths must prevent system collapse; if a component fails, adjacent components must immediately take over."**
 
 `soma-moa` is an **open public standard specification for zero-downtime resilient computing** designed for large-scale semiconductors, AI accelerators, autonomous mobility, and robotics ecosystems. It aims to mitigate single points of failure (SPOF) and provides a full-stack self-healing framework extending from L0 physical materials to L3 software governance.
