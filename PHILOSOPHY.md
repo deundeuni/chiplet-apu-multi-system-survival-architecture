@@ -3,7 +3,6 @@
 
 # 2. PHILOSOPHY.md
 
-```markdown
 # soma-moa Design Philosophy & Field Motivation
 
 ## 1. Field-Driven Motivation
