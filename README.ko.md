@@ -1,8 +1,5 @@
 # soma-moa: 칩렛-APU 다중 시스템 생존 아키텍처 v2.6 (Final)
 
-![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)
-![License: DPL v1.0](https://img.shields.io/badge/License-DPL_v1.0-green.svg)
-![Version](https://img.shields.io/badge/Version-v2.6_Final-orange.svg)
 
 > **"볼트 하나가 풀려도 전체 시스템이 무너지지 않게 예비 경로가 있어야 하며, 부품 하나가 쓰러지면 옆 부품이 즉시 바통을 이어받아야 한다."**
 
