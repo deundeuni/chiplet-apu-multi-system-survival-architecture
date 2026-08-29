@@ -89,7 +89,7 @@ This architecture rejects excessive capacity specification competition and the l
 
 The self-healing and zero-downtime control philosophy of this architecture is not restricted to single chiplet systems, but extends broadly across future industries requiring high reliability and uninterrupted computation:
 1. **Next-Generation AI Data Centers & Cloud Farms:** Standard control architecture blocking peak-time fabric deadlocks across hyperscale clusters comprising tens of thousands of GPU/NPU chiplets.
-2. **Autonomous Mobility & EV Computing:** Chiplet survival control satisfying functional safety (ISO 26262 / ASIL-D) under extreme driving conditions and power fluctuations.
+2.  Autonomous Mobility & EV Computing: Chiplet survival control architecture designed with functional safety principles aligned to ISO 26262 / ASIL-D in mind, targeting resilience under extreme driving conditions and power fluctuations. (Compliance requires independent certification and is not claimed by this document alone.)
 3. **Robotics & Smart Factory Automation:** Edge AI controllers operating uninterrupted in environments frequent with physical shock and electrical noise.
 4. **Aerospace & Mission-Critical Edge Systems:** Uninterrupted mission-critical computing surviving via independent anti-tamper and self-healing under radiation and external physical interference environments.
 
@@ -97,19 +97,20 @@ The self-healing and zero-downtime control philosophy of this architecture is no
 
 ## 7. Creator's Commercial Protection & Legal Defensive Shield Declaration
 
-This whitepaper enacts the following **4-Layer Legal Defensive Shield** to protect the exclusive commercial interests of the creator, Soma-Moa (`soma-moa`), and preemptively nullify malicious patent monopolies by third parties:
-
-* **Timestamp (Prior Art):** Preemptive rejection and invalidation of third-party monopolistic patent filings.
-* **DPL (Defensive Publication License - Retaliation Clause):** Immediate revocation of license and access rights if a party attacks the creator with patent suits.
-* **Prior User Right:** Secures permanent royalty-free independent manufacturing and business rights under patent laws regardless of third-party patent registrations.
-* **Trade Secret Vault:** Exclusive retention of core formulas, RTL code, and anti-tamper sensor calibration values in private storage.
+This whitepaper establishes the following 4-layer defensive framework intended to support the legitimate interests of the creator (soma-moa / Creator: deundeuni) and to provide grounds for resisting third-party attempts at exclusive patent monopolization over the subject matter disclosed herein.
+Timestamp (Prior Art): Provides documented prior art that may serve as grounds for rejecting third-party patent applications covering the same or substantially the same subject matter disclosed in this document.
+DPL (Defensive Publication License — Conditional Termination Clause): Includes a conditional termination clause applicable to practicing parties who initiate patent infringement claims against the creator or ecosystem participants, subject to the conditions set out in Section 7.1.
+Prior User Right: May support a claim to continued royalty-free use of the disclosed technology, subject to the implementation/preparation evidence requirements set out in Section 7.2.
+Trade Secret Vault: Core formulas, RTL code, and anti-tamper calibration values remain undisclosed and are retained as trade secrets.
 
 ### 7.1 DPL (Defensive Publication License) & CC BY 4.0 Terms
-* The functional implementation concepts (What) of this document are fully opened worldwide to prevent any tech giant from monopolizing this structure via patents.
-* **Retaliation Clause:** The moment any individual or entity utilizing part or all of this architecture initiates patent infringement litigation against the creator (Soma-Moa) or ecosystem members, their DPL license validity terminates instantly, and all physical/software access rights to this technology are legally revoked.
+
+This DPL (Defensive Publication License) operates as a conditional license with a defensive termination clause: if a party practicing this technology brings a patent infringement claim against the original author or other ecosystem participants, that party's license shall be treated as never having been granted, retroactively. This is structurally similar to the patent retaliation clauses found in existing open-source licenses such as the Apache License 2.0. Its actual legal enforceability presumes that each practicing party has agreed to and acted under the terms of this license.
 
 ### 7.2 Prior User Right & Timestamp Guarantee
-* By acquiring a timestamp (2026-08-28) via GitHub commits and the official domain (`somamoa.ai.kr`), the creator (Soma-Moa) holds **guaranteed Prior User Rights under Article 103 of the Korean Patent Act, 35 U.S.C. 273 (USA), and EPO examination guidelines**, ensuring permanent royalty-free independent manufacturing, sales, and licensing rights regardless of subsequent third-party patent grants.
+
+The publication of this white paper may serve as potential supporting evidence for a prior user right under Article 103 of the Korean Patent Act and 35 U.S.C. §273. However, the actual establishment of such a right does not derive from publication alone — it depends on whether the holder was actually practicing the invention, or making substantial preparations to practice it, at the time of the relevant patent application. This claim must therefore be supported by separate evidence of implementation or development (e.g., design documents, prototypes, records of business preparation).
+Timestamp (Prior Art): For the specific configurations and methods disclosed in this document, any subsequently filed third-party patent application claiming the same or substantially the same subject matter may be rejected on grounds of lack of novelty or lack of inventive step, based on this document as prior art.
 
 ---
 
