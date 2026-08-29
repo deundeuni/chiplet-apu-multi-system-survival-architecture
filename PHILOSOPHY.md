@@ -1,8 +1,6 @@
 
 ---
 
-# 2. PHILOSOPHY.md
-
 # soma-moa Design Philosophy & Field Motivation
 
 ## 1. Field-Driven Motivation
