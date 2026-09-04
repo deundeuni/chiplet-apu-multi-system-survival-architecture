@@ -1,21 +1,21 @@
-# ARCHITECTURE_STRATEGY.md — Single-Die vs. Modular Survival Architecture Overview (v2.8.1 Final)
+# ARCHITECTURE_STRATEGY.md — Universal Modular Survival Architecture Independent of Implementation Means (v3.2.0 Master)
 
-> This document defines the structural differences and standardization logic of **Modular Architecture (Chiplet Integration)** to achieve both system survival and cost efficiency without relying on specific companies or proprietary brands.  
-> Published under CC BY 4.0 for the purpose of Defensive Publication (Prior Art).
+> This document defines the structural differences and standardization logic of **Modular Architecture (Chiplet Integration)** to achieve both system survival and cost efficiency, independent of specific implementation layers or control authorities.  
+> Published under CC BY 4.0 and DPL v1.0 for the purpose of Defensive Publication (Prior Art).
 
 ---
 
 ## 1. Comparison of Semiconductor Assembly Approaches
 
 * **Single-Die Integration**
-  * **Structure**: A single, massive die integrating all compute and control logic blocks into a monolithic silicon layout.
-  * **Characteristics**: Lower initial unit manufacturing cost and simpler internal routing structures.
-  * **Limitations**: A single localized physical defect invalidates the entire package. Provides limited isolation boundaries for power and security domains.
+  * **Structure** — A single, massive die integrating all compute and control logic blocks into a monolithic silicon layout.
+  * **Characteristics** — Lower initial unit manufacturing cost and simpler internal routing structures.
+  * **Limitations** — A single localized physical defect invalidates the entire package or increases yield loss. Provides limited isolation boundaries for power and security domains.
 
 * **Modular Integration (Chiplet Architecture)**
-  * **Structure**: Functional compute blocks interconnected via high-speed Fabric Interconnects.
-  * **Characteristics**: Enables active self-healing by isolating faulty modules and re-routing tasks to redundant blocks. Decouples power, clock, and security domains on a per-block basis.
-  * **Limitations**: Requires dedicated interconnect bridges (TL Bridge) and complex hardware/software control interfaces.
+  * **Structure** — Functional compute blocks interconnected via high-speed Fabric Interconnects.
+  * **Characteristics** — Enables active self-healing by isolating faulty modules and re-routing tasks to adjacent, individual, team, intermediate manager, or centrally designated redundant blocks. Decouples power, clock, and security domains on a per-block basis.
+  * **Limitations** — Requires dedicated interconnect bridges (TL Bridge) and complex hardware/software control interfaces.
 
 ---
 
@@ -23,25 +23,25 @@
 
 The two approaches are not mutually exclusive; they serve complementary operational environments:
 
-* **Mass-Market & Cost Verification Track (Single-Die)**: Deployed to minimize unit production costs and evaluate silicon yield efficiency.
-* **Mission-Critical & Security Track (Modular)**: Deployed in environments requiring non-stop uptime and strict data isolation (data centers, autonomous driving, industrial automation). Prevents unauthorized access from unverified external blocks while securing proprietary logic in isolated domains.
+* **Mass-Market & Cost Verification Track (Single-Die)** — Deployed to minimize unit production costs and evaluate silicon yield efficiency.
+* **Mission-Critical & Security Track (Modular)** — Deployed in environments requiring non-stop uptime and strict data isolation (data centers, autonomous driving, industrial automation). Mitigates unauthorized access from unverified external blocks while securing proprietary logic in isolated domains.
 
 ---
 
 ## 3. Interoperability Logic of Modular Architecture
 
-* **High-Performance Profile**: Primary Control Block + External High-Performance Accelerator Block (connected via TL Bridge) → Maximizes peak performance.
-* **Fallback & Generic Profile**: Internal Backup Compute Block takes over upon external accelerator failure or detachment → Maintains continuous operation and cost optimization.
+* **High-Performance Profile** — Primary Control Block + External High-Performance Accelerator Block (connected via TL Bridge) → Maximizes peak performance.
+* **Fallback & Generic Profile** — Internal Backup Compute Block takes over upon external accelerator failure or detachment → Maintains continuous operation and cost optimization.
 
-**The core requirement is the standardization of the TL Bridge and the Control OS Layer.** The TL Bridge isolates power/clock domains independently, while the control layer validates block integrity through voting protocols. This allows hot-swappable compute block replacement without modifying baseboard hardware or system software.
+**The core requirement is the standardization of the TL Bridge and the Control OS Layer.** The TL Bridge isolates power/clock domains independently, while control layers evaluate block integrity via autonomous individual control, team self-control, intermediate domain managers, horizontal P2P communication, or central orchestration. This allows hot-swappable compute block replacement without modifying baseboard hardware or system software.
 
 ---
 
 ## 4. Phased Accumulation of Internal Intellectual Property
 
-* **Phase 1**: Interconnect high-performance external modules to establish initial system capability.
-* **Phase 2**: Deploy internal backup compute modules alongside external blocks in production field environments to accumulate self-healing and control telemetry data.
-* **Phase 3**: Establish a failsafe architecture capable of maintaining minimal operational functionality even under complete external module isolation.
+* **Phase 1** — Interconnect high-performance external modules to establish initial system capability.
+* **Phase 2** — Deploy internal backup compute modules alongside external blocks in production field environments to accumulate self-healing and control telemetry data.
+* **Phase 3** — Establish a failsafe architecture capable of maintaining minimal operational functionality even under complete external module isolation.
 
 ---
 
@@ -51,45 +51,46 @@ Market trends show expanding partnerships with external high-performance compute
 
 ---
 
-## 6. Evolution of Survival Standards (soma-moa Roadmap v2.8.1)
+## 6. Universal Architecture & Multi-Tier Control Scope (soma-moa Roadmap v3.2.0)
 
-* **v2.6–v2.7 Specifications**: L0 independent PMIC/clock isolation, L1 physical fault isolation and thermal/voltage (T-Reg) suppression, L0-S security domain isolation, $N \ge 3$ variable-scale physical/virtual/hybrid $N$-way voting, and dynamic SW/AI interconnect schemes.
-* **v2.8 Implementation Layer Agnosticism (Prior Art Scope Expansion)**:
-  Execution of voting and fault-isolation protocols is not restricted to any single hardware layer. The logical $N$-way voting and self-healing process applies universally across the following execution layers:
-  * **Hardware Layer**: Microcode, Firmware (FW), Memory Controllers, IOMMU/MMU, TL Bridge Logic.
-  * **System Software Layer**: OS Kernel, Kernel Drivers, Interrupt Handlers, Hypervisors, Schedulers.
-  * **Memory/Resource Control Layer**: Memory Isolation and Voting, Page Table-based Isolation, DMA Buffer Validation, Register Locks.
-  * **Application & AI Layer**: Software Agents, AI Accelerators, Inter-AI Agent Trust Voting Orchestration.
-  * **Universal Principle**: Irrespective of physical implementation layer (microcode, drivers, or memory controllers), any system where $N$ logical units (physical, virtual, or hybrid) execute trust voting for fault isolation and self-healing falls under the prior art scope of this specification.
-* **Implementation Examples**:
-  * Combining 3 Physical Blocks + 2 Virtual Driver Nodes = $N=5$ (Physical + Virtual Node Voting).
-  * Memory Controller performing 5-way Page Voting and isolating corrupted physical memory pages upon error detection.
-  * Kernel Driver executing $N=3$ voting over inference outputs from 3 AI Agents prior to hardware dispatch.
-  * (These examples apply across edge AI, local computing, cloud infrastructure, and enterprise data centers.)
+This specification is not restricted to any single hardware location or control algorithm. It broadly defines all technical execution means and control topologies that achieve the universal structural objective of **"module separation and state verification for fault isolation and self-healing"** within the scope of this prior art.
 
----
+* **Execution Layer Agnosticism (Layer-Agnostic Architecture)**
+  * **Hardware Layer** — Microcode, Firmware (FW), Memory Controllers, IOMMU/MMU, TL Bridge Logic.
+  * **System Software Layer** — OS Kernel, Kernel Drivers, Interrupt Handlers, Hypervisors, Schedulers.
+  * **Memory/Resource Control Layer** — Memory Isolation, Page Table-based Isolation, DMA Buffer Validation, Register Locks.
+  * **Application & AI Layer** — Software Agents, AI Accelerators, Inter-AI Agent Trust Voting Orchestration.
 
-## 7. Conclusion: Convergence Through Open Standards
+* **Topology & Control Unit Agnosticism (Topology & Unit-Agnostic Control)**
+  * **Autonomous Individual Control** — An individual chiplet/module independently evaluates internal telemetry anomalies and triggers self-isolation, power throttling, or fail-safe mode without external controller intervention.
+  * **Team-Level Self-Control** — A sub-group (team) of $M$ compute blocks executes 1st-stage local fault detection, mutual verification, and local bypass internally without global controller intervention.
+  * **Intermediate Manager Control (Intermediate / Domain Manager Control)** — An intermediate control entity (Domain Controller, Sub-System Manager) positioned above multiple teams/clusters orchestrates inter-team resources and manages 2nd-stage domain isolation.
+  * **Central Orchestrative Management** — Central controllers, hypervisors, central PMICs, or global orchestrators conduct global trust validation and approve final resource reallocation.
+  * **Horizontal Peer-to-Peer Control** — Peer blocks at the same hierarchical layer communicate horizontally to mutually exclude anomalous nodes or execute proxy computations.
+  * **Multi-Tier Tree & Matrix Hybrid Control** — A multi-level hierarchical structure (Individual Node ↔ Team Self-Control ↔ Intermediate Manager ↔ Central/Global Orchestration or $N$-way trust voting) executing localized or collaborative fault mitigation.
 
-In mission-critical environments where system survival and data protection are paramount, architectures naturally **converge toward modular chiplet integrations**.
+* **Localized Proximity Preemptive Action**
+  * To mitigate central control latency upon anomaly detection, the physically or logically closest adjacent node or sub-tier control layer executes 0.1ms-class 1st-stage local containment prior to escalating status reports to upper domain managers or central systems.
 
-The critical factor is not who manufactures individual compute blocks, but **who defines the interconnect bridge (Interconnect) and control protocols**. Establishing these safety and interconnect rules as an open standard ensures non-stop system survival regardless of the attached compute blocks.
-
----
-
-## 8. Prior Art Defense & Non-Exclusive Licensing
-
-* **Defensive Publication & Non-Exclusive Rights**: All structural components and module interconnect control procedures defined herein are publicly disclosed as Prior Art. Implementations adhering to this specification are granted royalty-free non-exclusive rights.
-* **Defense Against Patent Enclosure**: This document serves as prior art to invalidate third-party patent claims attempting to privatize or enclose these specifications. Unauthorized enforcement may be subject to retroactive licensing fees and injunctive relief.
+* **Universal Principle**
+  * Irrespective of implementation stack (HW/SW/AI), control unit tier (Individual/Team/Intermediate/Central/P2P), or execution sequence, any system configuration that evaluates module state to isolate fault domains and achieve non-stop self-healing falls under the prior art scope of this specification.
 
 ---
 
-## 9. Provenance & Rights Attribution
+## 7. Prior Art Defense & Legal Framework
 
-* **Original IP Owner**: deundeuni (`soma-moa`)
-* **Official Primary Domain**: `somamoa.ai.kr`
-* **Source Repository**: GitHub - `ARCHITECTURE_STRATEGY.md` (Referencing commit hash and timestamp)
-* **License**: CC BY 4.0 (`https://creativecommons.org/licenses/by/4.0/`) — Free use and non-exclusive rights with proper attribution
-* **Reference Standards**: Extended survival specification built upon modular interconnect standards including UCIe, CXL, and TL-UL
-* **Precedence of Korean Original**: The Korean text serves as the authoritative legal original; translation versions are provided for reference purposes only.
-* **Defensive Publication Proof**: The public commit timestamp on GitHub and publication on `somamoa.ai.kr` establish the formal prior art date.
+* **Defensive Publication & Non-Exclusive Rights** — All structural components, multi-tier control schemes (Central/Intermediate/Team/Individual/P2P), and module interconnect procedures defined herein are publicly disclosed as Prior Art. Implementations adhering to this specification are granted royalty-free non-exclusive rights.
+* **Defense Against Patent Enclosure** — This document serves as prior art to invalidate third-party patent claims attempting to privatize or enclose these specifications. Unauthorized enforcement may be subject to retroactive licensing fees and injunctive relief.
+* **Trade Secret Dual Management** — Universal architecture principles are publicly disclosed to build a defensive perimeter, while specific runtime weights, precise timeout parameters, and source implementation code are maintained as non-disclosed Trade Secrets to protect core IP rights.
+
+---
+
+## 8. Provenance & Document Integrity
+
+* **Original IP Owner** — deundeuni (`soma-moa`)
+* **Official Primary Domain** — `somamoa.ai.kr`
+* **Source Repository** — GitHub - `soma-moa / ARCHITECTURE_STRATEGY.md` (Referencing commit hash and timestamp)
+* **License** — CC BY 4.0 & DPL v1.0 (Defensive Patent License v1.0)
+* **Reference Standards** — Extended survival specification built upon modular interconnect standards including UCIe, CXL, and TL-UL
+* **Document Completeness** — This document possesses independent technical completeness as a standalone specification.
+* **Precedence of Korean Original** — The Korean text serves as the authoritative legal original (Original Authority); translation versions are provided for reference purposes only.
