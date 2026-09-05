@@ -1,4 +1,7 @@
-# ARCHITECTURE_STRATEGY.md — Universal Modular Survival Architecture Independent of Implementation Means (v3.2.0 Master)
+> **Bilingual Disclosure Notice:** This is a bilingual disclosure - same content in KR/EN, v3.2.4 2026-09-06 (Korean version: [README.ko.md](README.ko.md))  
+> **Original Authority Notice:** This English version was drafted and translated with the assistance of AI tools (Meta AI, Google Gemini), so phrasing and expressions may not be perfectly smooth or fully precise. The authoritative original for all legal, technical, and engineering interpretations belongs exclusively to the Korean document (`README.ko.md` / `ARCHITECTURE_STRATEGY.md`). (PHILOSOPHY.ko.md is authoritative original)
+
+# ARCHITECTURE_STRATEGY.md — Universal Modular Survival Architecture Independent of Implementation Means (v3.2.4 Master)
 
 > This document defines the structural differences and standardization logic of **Modular Architecture (Chiplet Integration)** to achieve both system survival and cost efficiency, independent of specific implementation layers or control authorities.  
 > Published under CC BY 4.0 and DPL v1.0 for the purpose of Defensive Publication (Prior Art).
@@ -14,7 +17,7 @@
 
 * **Modular Integration (Chiplet Architecture)**
   * **Structure** — Functional compute blocks interconnected via high-speed Fabric Interconnects.
-  * **Characteristics** — Enables active self-healing by isolating faulty modules and re-routing tasks to adjacent, individual, team, intermediate manager, or centrally designated redundant blocks. Decouples power, clock, and security domains on a per-block basis.
+  * **Characteristics** — Supports active self-healing by isolating faulty modules and re-routing tasks to adjacent, individual, team, intermediate manager, or centrally designated redundant blocks. Decouples power, clock, and security domains on a per-block basis.
   * **Limitations** — Requires dedicated interconnect bridges (TL Bridge) and complex hardware/software control interfaces.
 
 ---
@@ -51,15 +54,21 @@ Market trends show expanding partnerships with external high-performance compute
 
 ---
 
-## 6. Universal Architecture & Multi-Tier Control Scope (soma-moa Roadmap v3.2.0)
+## 6. Universal Architecture & Multi-Tier Control Scope (soma-moa Roadmap v3.2.4)
 
 This specification is not restricted to any single hardware location or control algorithm. It broadly defines all technical execution means and control topologies that achieve the universal structural objective of **"module separation and state verification for fault isolation and self-healing"** within the scope of this prior art.
+
+* **Physical Implementation Reference**
+  * As representative physical and mechanical upper implementation examples of this universal survival architecture, the **CWP 4-Hardware Mechanisms (`CWP-Entry`, `CWP-Rolling-Self-Align-Battery-Swap-System`, `CWP-Battery-Swap`, `CWP-Clamping-Battery-Swap-System`)** and the compute survival controller **`chiplet-apu-multi-system-survival-architecture`** are referenced cross-functionally as prior art.
 
 * **Execution Layer Agnosticism (Layer-Agnostic Architecture)**
   * **Hardware Layer** — Microcode, Firmware (FW), Memory Controllers, IOMMU/MMU, TL Bridge Logic.
   * **System Software Layer** — OS Kernel, Kernel Drivers, Interrupt Handlers, Hypervisors, Schedulers.
   * **Memory/Resource Control Layer** — Memory Isolation, Page Table-based Isolation, DMA Buffer Validation, Register Locks.
   * **Application & AI Layer** — Software Agents, AI Accelerators, Inter-AI Agent Trust Voting Orchestration.
+  * **Optical/Photonic Layer** — Encompasses cases where data transmission and state verification between chiplets are conducted via optical signals (Silicon Photonics, Co-Packaged Optics, Optical Interconnects, or optical sensor-based temperature/strain/power sensing) rather than electrical signals. Even if the verification medium is replaced by optics, if the universal structural objective of "fault detection → isolation → self-healing" remains identical, it falls under the prior art scope of this specification.
+  * **Quantum Layer** — Encompasses cases where state verification and inter-chiplet connections are executed via quantum entanglement, quantum teleportation, or quantum sensing. Even if the verification medium is replaced by quantum means, if the structural objective remains identical, it falls under the prior art scope of this specification.
+  * **Future / Emerging Media Layer** — Encompasses unexplored physical and logical media (terahertz, plasmonics, molecular/biological elements) and sensing means applied post-publication. Irrespective of physical media characteristics, identical structural objectives fall under this prior art category.
 
 * **Topology & Control Unit Agnosticism (Topology & Unit-Agnostic Control)**
   * **Autonomous Individual Control** — An individual chiplet/module independently evaluates internal telemetry anomalies and triggers self-isolation, power throttling, or fail-safe mode without external controller intervention.
@@ -72,25 +81,31 @@ This specification is not restricted to any single hardware location or control 
 * **Localized Proximity Preemptive Action**
   * To mitigate central control latency upon anomaly detection, the physically or logically closest adjacent node or sub-tier control layer executes 0.1ms-class 1st-stage local containment prior to escalating status reports to upper domain managers or central systems.
 
+* **Predictive Preemptive Action**
+  * Encompasses control configurations that detect anomalous indicators prior to actual physical hardware failure or data corruption via cumulative telemetry data, time-series dynamic pattern learning, micro-voltage/temperature fluctuation sensing, or AI agent predictions, executing preemptive bypass to idle blocks or early isolation.
+
 * **Universal Principle**
-  * Irrespective of implementation stack (HW/SW/AI), control unit tier (Individual/Team/Intermediate/Central/P2P), or execution sequence, any system configuration that evaluates module state to isolate fault domains and achieve non-stop self-healing falls under the prior art scope of this specification.
+  * Irrespective of implementation stack (HW/SW/AI/OPTICAL/QUANTUM/FUTURE), control unit tier (Individual/Team/Intermediate/Central/P2P), execution sequence, or control timing (post-detection/predictive), any system configuration that evaluates module state to isolate fault domains and achieve non-stop self-healing falls under the prior art scope of this specification.
 
 ---
 
-## 7. Prior Art Defense & Legal Framework
+## 7. Practical Protection
 
-* **Defensive Publication & Non-Exclusive Rights** — All structural components, multi-tier control schemes (Central/Intermediate/Team/Individual/P2P), and module interconnect procedures defined herein are publicly disclosed as Prior Art. Implementations adhering to this specification are granted royalty-free non-exclusive rights.
-* **Defense Against Patent Enclosure** — This document serves as prior art to invalidate third-party patent claims attempting to privatize or enclose these specifications. Unauthorized enforcement may be subject to retroactive licensing fees and injunctive relief.
-* **Trade Secret Dual Management** — Universal architecture principles are publicly disclosed to build a defensive perimeter, while specific runtime weights, precise timeout parameters, and source implementation code are maintained as non-disclosed Trade Secrets to protect core IP rights.
+* **Authoritative Original Principle:** The legal and technical interpretations of this specification strictly prioritize the Korean original document (`README.ko.md` / `ARCHITECTURE_STRATEGY.md`), while English and other translations function solely for reference.
+* **Broad Scope Inclusion:** All high-level concepts, including modular integration methods, TL Bridge coupling, multi-tier control topologies, 0.1ms localized containment, and predictive isolation configurations described herein, apply generically for broad prior art coverage.
+* **Separation of Commercialization Content:** This core whitepaper contains strictly Pure Open Source and prior art disclosures, while proprietary revenue models and business execution details are managed separately.
 
 ---
 
-## 8. Provenance & Document Integrity
+## 8. Sources
 
-* **Original IP Owner** — deundeuni (`soma-moa`)
-* **Official Primary Domain** — `somamoa.ai.kr`
-* **Source Repository** — GitHub - `soma-moa / ARCHITECTURE_STRATEGY.md` (Referencing commit hash and timestamp)
-* **License** — CC BY 4.0 & DPL v1.0 (Defensive Patent License v1.0)
-* **Reference Standards** — Extended survival specification built upon modular interconnect standards including UCIe, CXL, and TL-UL
-* **Document Completeness** — This document possesses independent technical completeness as a standalone specification.
-* **Precedence of Korean Original** — The Korean text serves as the authoritative legal original (Original Authority); translation versions are provided for reference purposes only.
+* **Official Original IP Owner:** deundeuni (`soma-moa`)
+* **Canonical Gateway:** `somamoa.ai.kr` (Canonical Gateway)
+* **Official Repository:** GitHub - `soma-moa / ARCHITECTURE_STRATEGY.md` (Referencing commit hash and timestamp)
+* **Related APU Repository:** GitHub - `deundeuni / chiplet-apu-multi-system-survival-architecture`
+* **Related CWP Repository 1:** GitHub - `deundeuni / CWP-Entry`
+* **Related CWP Repository 2:** GitHub - `deundeuni / CWP-Rolling-Self-Align-Battery-Swap-System`
+* **Related CWP Repository 3:** GitHub - `deundeuni / CWP-Battery-Swap`
+* **Related CWP Repository 4:** GitHub - `deundeuni / CWP-Clamping-Battery-Swap-System`
+* **License:** CC BY 4.0 & DPL v1.0 (Defensive Patent License v1.0)
+* **Reference Standards:** Extended survival specification built upon modular interconnect standards including UCIe, CXL, and TL-UL
