@@ -86,3 +86,36 @@ The Korean original version of this specification constitutes the primary legal 
 2. You must give appropriate credit to the original author (deundeuni / soma-moa).
 3. Defensive Termination Clause (DPL v1.0): If any entity initiates patent litigation against the original author or ecosystem members regarding this specification, the license granted under this document shall automatically terminate retroactively.
 ```
+
+## Sources & Records
+
+* **Ecosystem Repositories & Academic Identifiers**
+  * Universal Survival Architecture & APU Controller (`chiplet-apu-multi-system-survival-architecture`) — GitHub: `deundeuni / chiplet-apu-multi-system-survival-architecture` | CERN Zenodo DOI: `10.5281/zenodo.22374987` (https://doi.org/10.5281/zenodo.22374987)
+  * Disaster Evacuation & Auxiliary Infrastructure (`LAST-LIGHT`) — GitHub: `deundeuni / LAST-LIGHT` | CERN Zenodo DOI: `10.5281/zenodo.22373189` (https://doi.org/10.5281/zenodo.22373189)
+  * Polar Marine Sacrificial Armor (`MAX-LIFE-ICE-BELT`) — GitHub: `deundeuni / MAX-LIFE-ICE-BELT` | CERN Zenodo DOI: `10.5281/zenodo.22373686` (https://doi.org/10.5281/zenodo.22373686)
+  * CWP Battery Swap Docking (`CWP-Battery-Swap`) — CERN Zenodo DOI: `10.5281/zenodo.22373538` (https://doi.org/10.5281/zenodo.22373538)
+  * CWP Electromagnetic Clamping (`CWP-Clamping-Battery-Swap-System`) — CERN Zenodo DOI: `10.5281/zenodo.22373722` (https://doi.org/10.5281/zenodo.22373722)
+  * CWP Rolling Self-Align (`CWP-Rolling-Self-Align-Battery-Swap-System`) — CERN Zenodo DOI: `10.5281/zenodo.22373704` (https://doi.org/10.5281/zenodo.22373704)
+  * Canonical Gateway & Main Repository (`soma-moa`) — GitHub: `deundeuni / soma-moa` | Gateway Domain: `somamoa.ai.kr`
+
+* **International Technical Standards & Specifications**
+  * ISO 7010 / ISO 16069 — Graphical symbols, Safety colours and Safety Way Guidance Systems (SWGS)
+  * Bluetooth SIG Specification — Auracast / LE Audio Broadcast Specifications
+  * IEEE 802.15.4z / UWB Standard — Ultra-Wideband Positioning and Ranging Standards
+  * ISO 8501 — Surface Cleanliness and Preparation Standards for Steel Substrates
+  * IMO AFS Convention & EU MSFD — International Convention on the Control of Harmful Anti-fouling Systems & Marine Strategy Framework Directive
+  * Classification Society Ice Class Rules — Polar navigation ice-belt structural specifications (KR, DNV, ABS)
+
+* **Public Domain Prior Art & Physics Principles**
+  * Béla Barényi (1951) — Automotive Passive Safety Architecture (Crumple Zone & Sacrificial Structural Sacrifice)
+  * Public Domain Kinematics & Clamping — N/(N+1) Differential Reduction, Electro-Permanent Magnet (EPM) Control Logic
+
+* **Legal Statutes & Precedents**
+  * Korean Patent Act Article 103 — Prior Use Rights (Non-exclusive License by Prior Use)
+  * 35 U.S.C. §273 — Defense to Infringement Based on Prior Commercial Use
+  * Korean Fire Safety Act & Building Act — Statutory Emergency Lighting and Auxiliary Power Standards
+
+* **Defensive Prior Art Statement:** The technical concepts, structural designs, and referenced standards disclosed in this specification are registered with immutable timestamp records across GitHub Commit Hashes and the CERN Zenodo / DataCite global academic registry. This aims to mitigate the risk of private patent monopolization by third parties and serves as a reference for prior art in the public domain during global patent examinations to assist in evaluating novelty and non-obviousness.
+
+* **Non-Intentional Omission & Non-Exhaustive Disclaimer:** The technical standards, public domain principles, statutory provisions, and repository lists cited herein serve as non-limiting illustrative examples and do not constitute an exhaustive or restrictive definition. Any potential omission or non-inclusion of specific technical metrics, industry standards, subsequent revisions, or equivalent prior art resulting from subjective limitations or cognitive oversight is strictly non-intentional and does not imply deliberate concealment or exclusion. All derivative standards, revised specifications, equivalent mechanisms, and public domain combinations associated with the overarching technical concept disclosed herein shall be deemed inherently encompassed within the defensive prior art scope of this whitepaper.
+
