@@ -1,4 +1,7 @@
-# ARCHITECTURE_STRATEGY.md — 구현 수단 무관 범용 조립형 생존 아키텍처 (v3.2.3 Master)
+> **다국어 공개 안내:** 본 문서는 동일 내용의 한/영 이중 공개 문서입니다. v3.2.4 2026-09-06 (영문: [README_EN.md](README_EN.md))  
+> **Original Authority Notice:** 본 기술 명세의 법적·공학적 판단 최상위 기준은 한글 원본(`README.ko.md`)에 귀속되며, 영문본은 보조 참조용으로만 기능한다. (PHILOSOPHY.ko.md is authoritative original)
+
+# ARCHITECTURE_STRATEGY.md — 구현 수단 무관 범용 조립형 생존 아키텍처 (v3.2.4 Master)
 
 > 본 문서는 특정 기업이나 특정 브랜드를 배제하고, 구현 수단이나 제어 주체와 무관하게 시스템 생존성과 경제성을 동시에 확보하기 위한 **물리적·논리적 범용 조립 방식(Modular Architecture)**의 구조적 차이와 표준화 논리를 다룹니다.  
 > 본 문서는 CC BY 4.0 및 DPL v1.0으로 공개되며, 방어적 공개(Defensive Publication)를 목적으로 합니다.
@@ -14,7 +17,7 @@
 
 * **조립형 (Chiplet / Modular Integration)**
   * **구조** — 기능별로 분리된 개별 칩렛(블록)들을 패브릭 Interconnect로 상호 연결하는 방식입니다.
-  * **특징** — 특정 블록에 장애가 발생해도 해당 영역만 격리하고 인접, 개별, 팀, 중간 관리자, 또는 중앙 지정 예비 블록으로 바통을 넘기는 자가치유가 가능합니다. 전원, 클럭, 보안 영역을 블록 단위로 독립화할 수 있습니다.
+  * **특징** — 특정 블록에 장애가 발생해도 해당 영역만 격리하고 인접, 개별, 팀, 중간 관리자, 또는 중앙 지정 예비 블록으로 바통을 넘기는 자가치유를 지향합니다. 전원, 클럭, 보안 영역을 블록 단위로 독립화할 수 있습니다.
   * **제약** — 블록 간을 연결하는 브리지(TL Bridge) 인터페이스와 복잡한 물리·소프트웨어 제어 설계가 요구됩니다.
 
 ---
@@ -51,9 +54,12 @@
 
 ---
 
-## 6. 구현 수단 무관 범용 구조 및 다층 제어 포괄 (soma-moa 로드맵 v3.2.3)
+## 6. 구현 수단 무관 범용 구조 및 다층 제어 포괄 (soma-moa 로드맵 v3.2.4)
 
 본 규격은 특정 하드웨어 위치나 단일 제어 알고리즘에 국한되지 않으며, **"기능 모듈 분리 및 상태 검증을 통한 이상 격리 및 자가치유"**라는 범용 구조적 목적을 달성하는 모든 기술적 수단 및 제어 토폴로지를 동일한 선행기술 범주로 포괄 정의합니다.
+
+* **실체적 하드웨어 구현체 연계 (Physical Implementation Reference)**
+  * 본 범용 생존 아키텍처의 대표적인 물리적·기구적 상위 구현체 예시로서 **CWP 4대 하드웨어 메커니즘(`CWP-Entry`, `CWP-Rolling-Self-Align-Battery-Swap-System`, `CWP-Battery-Swap`, `CWP-Clamping-Battery-Swap-System`)** 및 연산 생존 제어기인 **`chiplet-apu-multi-system-survival-architecture`**를 선행기술로서 상호 참조한다.
 
 * **실행 계층 무관성 (Layer-Agnostic Architecture)**
   * **하드웨어 계층** — 마이크로코드, 펌웨어(FW), 메모리 컨트롤러, IOMMU/MMU, TL Bridge 로직.
@@ -83,20 +89,23 @@
 
 ---
 
-## 7. 원작자 실리 보호 및 방어막 선언 (Defensive Architecture & Legal Framework)
+## 7. 실리보호 (Practical Protection)
 
-* **방어적 공개 및 통상실시권 보장** — 본 아키텍처 규격에 명시된 구성 요소, 중앙/중간/팀/개별/P2P 제어 및 모듈 간 연결 제어 절차는 선행기술(Prior Art)로서 공개됩니다. 본 규격을 준수하는 구현체에 대해서는 누구나 무상으로 통상실시권을 지향합니다.
-* **특허 독점화에 대한 방어 조치** — 본 규격의 일부 또는 전체를 출원하여 사유화를 시도하는 제3자의 특허에 대해서는 본 문서의 공개 시점 및 타임스탬프를 근거로 무효화 자료로 원용될 수 있으며, 무단 점유 시 사후 사용료 청구 및 권리 침해 금지 청구의 대상이 될 수 있습니다.
-* **영업비밀 이원화 관리** — 상위 아키텍처 및 범용 구조 원리는 공개 백서로 방어망을 구축하되, 실질적인 세부 가중치, 정밀 타임아웃 파라미터, 구현 소스코드는 영업비밀(Trade Secret)로 분리 관리하여 기술 실리를 보호합니다.
+* **원안 우선 원칙:** 본 명세서의 법적·기술적 해석은 한국어 원본(`README.ko.md` / `ARCHITECTURE_STRATEGY.md`)을 최우선 기준으로 적용하며, 영문본 및 기타 언어 번역본은 참고용으로만 기능한다.
+* **범위 포괄성:** 본 문서에 기술된 조립 방식, TL Bridge 연동, 다층 제어 토폴로지, 0.1ms 국소 격리 및 예측 격리 구성을 포함한 모든 상위 개념은 광범위한 선행기술 선점을 위한 원용 범위로 포괄 적용된다.
+* **사업화 내용 분리:** 본 백서 원안에는 Pure Open Source 및 선행기술 개시 내용만을 포함하며, 독자적인 수익 모델 및 사업화 세부 실행안은 별도 기술 문서로 분리 관리한다.
 
 ---
 
-## 8. 출처 및 문서 완전성 선언 (Source & Document Integrity)
+## 8. 출처 (Sources)
 
-* **본 문서의 원안 권리자** — deundeuni (`soma-moa`)
-* **공식 원본 도메인** — `somamoa.ai.kr`
-* **공식 저장소** — GitHub - `soma-moa / ARCHITECTURE_STRATEGY.md` (커밋 해시 및 타임스탬프 기준)
-* **적용 라이선스** — CC BY 4.0 & DPL v1.0 (Defensive Patent License v1.0)
-* **기술적 기반 참조 표준** — UCIe, CXL, TL-UL 등 모듈러 Interconnect 오픈 표준을 참조한 생존형 확장 규격
-* **문서 완결성** — 본 문서는 단위 명세서로서 독자적인 기술적 완결성을 가집니다.
-* **원안 우선 조항** — 한국어 원문이 기준 원본(Original Authority)이며, 타 언어 번역본에서 해석 충돌 발생 시 한국어 원문을 최우선으로 적용합니다.
+* **공식 원안 권리자:** deundeuni (`soma-moa`)
+* **최상위 관문:** `somamoa.ai.kr` (Canonical Gateway)
+* **공식 저장소:** GitHub - `soma-moa / ARCHITECTURE_STRATEGY.md` (커밋 해시 및 타임스탬프 기준)
+* **연계 APU 저장소:** GitHub - `deundeuni / chiplet-apu-multi-system-survival-architecture`
+* **연계 CWP 저장소 1:** GitHub - `deundeuni / CWP-Entry`
+* **연계 CWP 저장소 2:** GitHub - `deundeuni / CWP-Rolling-Self-Align-Battery-Swap-System`
+* **연계 CWP 저장소 3:** GitHub - `deundeuni / CWP-Battery-Swap`
+* **연계 CWP 저장소 4:** GitHub - `deundeuni / CWP-Clamping-Battery-Swap-System`
+* **적용 라이선스:** CC BY 4.0 & DPL v1.0 (Defensive Patent License v1.0)
+* **기술적 기반 참조 표준:** UCIe, CXL, TL-UL 등 모듈러 Interconnect 오픈 표준을 참조한 생존형 확장 규격
